@@ -1,0 +1,25 @@
+list1 = ["[","{","("]
+list2 = ["]","}",")"]
+def check(myStr):
+    stack = []
+    for brace in myStr:
+        if brace in list1:
+            stack.append(brace)
+        elif brace in list2:
+            pos = list2.index(brace)
+            if ((len(stack) > 0) and (list1[pos] == stack[len(stack)-1])):
+                stack.pop()
+            else:
+                return "Unbalanced"
+    if len(stack) == 0:
+        return "Balanced"
+    else:
+        return "Unbalanced"
+  
+  
+
+string = "()[]"
+print(string,"-", check(string))
+  
+string = "[{()}"
+print(string,"-", check(string))
