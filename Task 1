@@ -1,0 +1,13 @@
+string=input('Enter String to Check: ')
+stack=[string]
+print('Entered String is: ')
+print(stack)
+for ch in string:
+  stack.append(ch)
+rev_string=''
+while len(stack)!=0:
+  rev_string=rev_string+stack.pop()
+  if(string==rev_string):
+    print('Entered String is Palindrome')
+  else:
+    print('Entered String is not Palindrome')
